@@ -1,0 +1,25 @@
+import React from 'react';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import { Nav, Container, Navbar} from 'react-bootstrap';
+const Mynavbar = () => {
+    return (
+        <div style={{ fontFamily: '"Noto Sans Lao", sans-serif' }}>
+            <Navbar expand="lg" style={{backgroundColor: '#e83e8c'}}>
+                <Container>
+                    <Navbar.Brand className='fw-bold text-white'>SHOX eCommerce</Navbar.Brand>
+                    <Navbar.Toggle aria-controls="basic-navbar-nav" />
+                    <Navbar.Collapse id="basic-navbar-nav">
+                        <Nav className="ms-auto fw-bold">
+                            <Nav.Link className='text-white' href="/dashboard">ຮ້ານຄ້າ</Nav.Link>
+                            <Nav.Link className='text-white' href="/history">ປະຫວັດການສັ່ງຊື້</Nav.Link>
+                            <Nav.Link className='text-white' href="/profile">ຂໍ້ມູນສ່ວນຕົວ ແລະ ກະເປົາເງິນ</Nav.Link>
+                            <Nav.Link className='text-white' href="/">ອອກຈາກລະບົບ</Nav.Link>
+                        </Nav>
+                    </Navbar.Collapse>
+                </Container>
+            </Navbar>
+        </div>
+    );
+}
+
+export default Mynavbar;
