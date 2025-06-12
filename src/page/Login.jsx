@@ -1,6 +1,7 @@
 import React, { useEffect } from "react";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 // Import AOS library
 import AOS from 'aos';
 import 'aos/dist/aos.css';
@@ -181,9 +182,9 @@ const Login = () => {
         </form>
         <div className="text-center mt-4" data-aos="fade-up">
           <span className="text-muted">ຍັງບໍ່ມີບັນຊີ?</span>
-          <a href="/register" className="ms-2 text-decoration-none fw-semibold" style={{ color: "#e75480" }}>
+          <Link to="/register" className="ms-2 text-decoration-none fw-semibold" style={{ color: "#e75480" }}>
             ສະໝັກບັນຊີ
-          </a>
+          </Link>
         </div>
       </div>
     </div>
