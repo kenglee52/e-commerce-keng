@@ -78,7 +78,7 @@ const Register = () => {
     }
 
     try {
-      const response = await fetch('http://localhost:3000/api/register', {
+      const response = await fetch('https://kengapi.onrender.com/api/register', {
         method: 'POST',
         body: JSON.stringify({ name, gender, tel, email, password }),
         headers: {
