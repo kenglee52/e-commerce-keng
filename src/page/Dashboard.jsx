@@ -7,7 +7,7 @@ import { faTrash, faPlus, faShoppingCart, faSearch, faFilter, faMobile, faTablet
 import Mynavbar from '../component/Mynavbar';
 import Swal from 'sweetalert2';
 import './App.css';
-
+import { useNavigate } from 'react-router-dom';
 const styles = {
     productImage: {
         width: '100%',
@@ -189,6 +189,7 @@ function generateOrderCode() {
 }
 
 const Dashboard = () => {
+    const navigate = useNavigate();
     const [products, setProducts] = useState([]);
     const [orderList, setOrderList] = useState([]);
     const [quantities, setQuantities] = useState({});
@@ -343,7 +344,7 @@ const Dashboard = () => {
                 popup: 'swal-custom-font',
             }
         }).then(() => {
-            window.location.reload();
+            navigate('/dashboard');
         });
 
         setOrderList([]);
