@@ -213,7 +213,7 @@ const Dashboard = () => {
             const userID = document.getElementById('cusID').value;
             const orderID = document.getElementById('bill').value;
             const date = document.getElementById('date').value;
-            const response = await fetch('http://localhost:3000/api/order', {
+            const response = await fetch('https://kengapi.onrender.com/api/order', {
                 method: 'POST',
                 body: JSON.stringify({
                     orderID, date, userID
@@ -233,7 +233,7 @@ const Dashboard = () => {
         const money = parseFloat(amount.replace(/,/g, ''));
 
         try {
-            const response = await fetch('http://localhost:3000/api/takeoutmoney', {
+            const response = await fetch('https://kengapi.onrender.com/api/takeoutmoney', {
                 method: 'PUT',
                 body: JSON.stringify({ money, id }),
                 headers: {
@@ -277,7 +277,7 @@ const Dashboard = () => {
                 total: item.price * item.quantity
             };
             try {
-                const response = await fetch('http://localhost:3000/api/detail', {
+                const response = await fetch('https://kengapi.onrender.com/api/detail', {
                     method: 'POST',
                     body: JSON.stringify(detail),
                     headers: {
@@ -296,7 +296,7 @@ const Dashboard = () => {
             const quantity = item.quantity;
             const productID = item.id;
             try {
-                await fetch('http://localhost:3000/api/editproduct', {
+                await fetch('https://kengapi.onrender.com/api/editproduct', {
                     method: 'PUT',
                     body: JSON.stringify({ quantity, productID }),
                     headers: {
@@ -314,7 +314,7 @@ const Dashboard = () => {
             const orderID = document.getElementById('bill').value;
             const money = document.getElementById('amount').value;
             const amount = parseFloat(money.replace(/,/g, ''));
-            await fetch('http://localhost:3000/api/payment', {
+            await fetch('https://kengapi.onrender.com/api/payment', {
                 method: 'POST',
                 body: JSON.stringify({ orderID, amount }),
                 headers: {
@@ -420,7 +420,7 @@ const Dashboard = () => {
 
     const checkProductQty = async (id) => {
         try {
-            const response = await fetch('http://localhost:3000/api/checkproduct', {
+            const response = await fetch('https://kengapi.onrender.com/api/checkproduct', {
                 method: 'POST',
                 body: JSON.stringify({ id }),
                 headers: {
@@ -454,7 +454,7 @@ const Dashboard = () => {
         }
         AOS.init({ duration: 800 });
 
-        fetch('http://localhost:3000/api/products')
+        fetch('https://kengapi.onrender.com/api/products')
             .then(res => res.json())
             .then(data => {
                 const productsWithImages = data.map(prod => {
