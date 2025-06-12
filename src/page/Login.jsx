@@ -39,7 +39,7 @@ const Login = () => {
         return;
       }
 
-      const response = await fetch('http://localhost:3000/api/login', {
+      const response = await fetch('https://kengapi.onrender.com/api/login', {
         method: 'POST',
         body: JSON.stringify({ email, password }),
         headers: {
