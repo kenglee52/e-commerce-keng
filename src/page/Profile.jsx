@@ -24,7 +24,7 @@ const Profile = () => {
                 return;
             }
 
-            const response = await fetch('http://localhost:3000/api/addmoney', {
+            const response = await fetch('https://kengapi.onrender.com/api/addmoney', {
                 method: 'PUT',
                 headers: {
                     "Content-Type": "application/json"
@@ -79,7 +79,7 @@ const Profile = () => {
                 return;
             }
 
-            const response = await fetch('http://localhost:3000/api/takeoutmoney', {
+            const response = await fetch('https://kengapi.onrender.com/api/takeoutmoney', {
                 method: 'PUT',
                 headers: {
                     "Content-Type": "application/json"
@@ -119,7 +119,7 @@ const Profile = () => {
     const showMoney = async () => {
         const id = document.getElementById('userID').value;
         try {
-            const response = await fetch(`http://localhost:3000/api/money/${id}`, {
+            const response = await fetch(`https://kengapi.onrender.com/api/money/${id}`, {
                 method: 'GET'
             });
             const result = await response.json();
