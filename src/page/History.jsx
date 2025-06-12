@@ -19,7 +19,7 @@ const History = () => {
     useEffect(() => {
         const LoadData = async () => {
             try {
-                const response = await fetch(`http://localhost:3000/api/order/${userID}`, {
+                const response = await fetch(`https://kengapi.onrender.com/api/order/${userID}`, {
                     method: 'GET',
                 });
                 const result = await response.json();
@@ -44,7 +44,7 @@ const History = () => {
 
     const showDetail = async (id, date) => {
         try {
-            const response = await fetch('http://localhost:3000/api/orderdetail', {
+            const response = await fetch('https://kengapi.onrender.com/api/orderdetail', {
                 method: 'POST',
                 body: JSON.stringify({ id }),
                 headers: {
