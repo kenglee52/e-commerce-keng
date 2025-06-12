@@ -6,6 +6,7 @@ import { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import Swal from 'sweetalert2';
 import './App.css';
+import { Link } from 'react-router-dom';
 const Register = () => {
   useEffect(() => {
     AOS.init({ duration: 1000 });
@@ -222,7 +223,10 @@ const Register = () => {
                 </button>
               </form>
               <p className="mt-3 text-center text-muted">
-                ມີບັນຊີແລ້ວ? <a href="/login"><i className="fas fa-sign-in-alt me-1"></i>ເຂົ້າລະບົບ</a>
+                ມີບັນຊີແລ້ວ?{' '}
+                <Link to="/login" className="text-decoration-none">
+                  <i className="fas fa-sign-in-alt me-1"></i>ເຂົ້າລະບົບ
+                </Link>
               </p>
             </div>
           </div>
