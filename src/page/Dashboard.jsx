@@ -227,7 +227,6 @@ const Dashboard = () => {
             alert(error);
         }
     }
-
     const expend = async () => {
         const amount = document.getElementById('amount').value;
         const id = document.getElementById('cusID').value;
@@ -309,7 +308,6 @@ const Dashboard = () => {
             }
         }
     }
-
     const Payment = async () => {
         try {
             const orderID = document.getElementById('bill').value;
@@ -328,27 +326,47 @@ const Dashboard = () => {
     }
 
     const saveOrderDetail = async () => {
-        const success = await expend();
-        if (!success) {
-            return;
+    // ສະແດງກ່ອນວ່າກຳລັງດຳເນີນການ
+    Swal.fire({
+        title: 'ກຳລັງດຳເນີນການ...',
+        text: 'ກະລຸນາລໍຖ້າ',
+        allowOutsideClick: false,
+        customClass:{
+            popup: 'swal-custom-font',
+        },
+        didOpen: () => {
+            Swal.showLoading();
         }
-        await saveOrder();
-        await saveDetail();
-        await Payment();
-        Swal.fire({
-            title: 'ການສັ່ງຊື້ຂອງທ່ານສຳເລັດ',
-            icon: 'success',
-            text: 'ພວກເຮົາຈະຈັດສິນຄ້າສົ່ງໃຫ້ທ່ານໃຫ້ໄວທີ່ສຸດ',
-            confirmButtonText: 'ຕົກລົງ',
-            customClass: {
-                popup: 'swal-custom-font',
-            }
-        }).then(() => {
-            navigate('/dashboard');
-        });
+    });
 
-        setOrderList([]);
-    };
+    const success = await expend();
+    if (!success) {
+        Swal.close(); // ປິດ loading ຫາກບໍ່ສຳເລັດ
+        return;
+    }
+
+    await saveOrder();
+    await saveDetail();
+    await Payment();
+
+    // ປິດ loading ຫຼັງຈາກທຸກຢ່າງສຳເລັດ
+    Swal.close();
+
+    // ແສດງ popup ສຳເລັດ
+    Swal.fire({
+        title: 'ການສັ່ງຊື້ຂອງທ່ານສຳເລັດ',
+        icon: 'success',
+        text: 'ພວກເຮົາຈະຈັດສິນຄ້າສົ່ງໃຫ້ທ່ານໃຫ້ໄວທີ່ສຸດ',
+        confirmButtonText: 'ຕົກລົງ',
+        customClass: {
+            popup: 'swal-custom-font',
+        }
+    }).then(() => {
+        window.location.reload(); // ຮູບໃໝ່ຫຼັງຈາກສຳເລັດ
+    });
+    setOrderList([]);
+};
+
 
    const showConfirmDialog = () => {
         const sumprice = Number(document.getElementById('amount').value.replace(/,/g, ''));
