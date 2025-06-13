@@ -111,7 +111,8 @@ const Login = () => {
           background: "rgba(255,255,255,0.35)",
           backdropFilter: "blur(16px)",
           borderRadius: "2rem",
-          boxShadow: "0 8px 32px 0 rgba(31, 38, 135, 0.18)"
+          boxShadow: "0 8px 32px 0 rgba(31, 38, 135, 0.18)",
+          margin: "10px 12px",
         }}
         data-aos="zoom-in"
       >
