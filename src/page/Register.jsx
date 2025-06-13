@@ -176,8 +176,8 @@ const Register = () => {
       </style>
 
       <div className="min-vh-100 d-flex align-items-center animated-bg" style={{ fontFamily: '"Noto Sans Lao", sans-serif' }}>
-        <div className="container" style={{margin: '15px 15px'}}>
-          <div className="row shadow-lg card-glass overflow-hidden">
+        <div className="container">
+          <div className="row shadow-lg card-glass overflow-hidden" style={{margin: '15px 15px'}}>
             {/* Left Panel */}
             <div className="col-md-6 d-flex flex-column justify-content-center align-items-center p-5 text-white bg-primary" data-aos="fade-right">
               <h2 className="mb-3"><i className="fas fa-hand-sparkles me-2"></i>ຍິນດີຕ້ອນຮັບ!</h2>
