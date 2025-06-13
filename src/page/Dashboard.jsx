@@ -393,7 +393,6 @@ const Dashboard = () => {
       <table style="width: 100%; border-collapse: collapse; font-size: 14px;">
         <thead>
           <tr>
-            <th style="border-bottom: 1px solid #ccc;">ລະຫັດສິນຄ້າ</th>
             <th style="border-bottom: 1px solid #ccc;">ສິນຄ້າ</th>
             <th style="border-bottom: 1px solid #ccc;">ລາຄາ</th>
             <th style="border-bottom: 1px solid #ccc;">ຈຳນວນ</th>
@@ -403,7 +402,6 @@ const Dashboard = () => {
         <tbody>
           ${orderList.map(item => `
             <tr>
-              <td>${item.id}</td>
               <td>${item.name}</td>
               <td>${item.price.toLocaleString()}</td>
               <td>${item.quantity}</td>
