@@ -341,7 +341,6 @@ const Dashboard = () => {
 
     const success = await expend();
     if (!success) {
-        Swal.close(); // ປິດ loading ຫາກບໍ່ສຳເລັດ
         return;
     }
 
